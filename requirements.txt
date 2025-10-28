@@ -1,0 +1,15 @@
+Django
+django-ckeditor
+django-humanize
+django-js-asset
+django-weasyprint
+djangorestframework
+psycopg2-binary
+mysql-connector-python
+djangorestframework-simplejwt
+django-filter
+markdown
+dj-database-url
+django-cors-headers
+django-datatables-view
+
