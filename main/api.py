@@ -1,4 +1,4 @@
-from .models import Product
+from .models import *
 from rest_framework import serializers, viewsets, permissions
 from .serializers import *
 
@@ -25,3 +25,12 @@ class ProveedorViewSet(viewsets.ModelViewSet):
     queryset = Proveedor.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = ProveedorSerializer
+
+
+class ClienteViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows clientes to be viewed or edited.
+    """
+    queryset = Cliente.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ClienteSerializer

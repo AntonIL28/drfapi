@@ -24,3 +24,10 @@ class Proveedor(models.Model):
 
     def __str__(self):
         return self.description
+
+class Cliente(models.Model):
+    id_cliente = models.IntegerField(primary_key=True)
+    descripcion = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.descripcion
