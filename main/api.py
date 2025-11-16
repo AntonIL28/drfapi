@@ -34,3 +34,12 @@ class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = ClienteSerializer
+
+
+class UnidadMedidaViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows unidades de medida to be viewed or edited.
+    """
+    queryset = UnidadMedida.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = UnidadMedidaSerializer
