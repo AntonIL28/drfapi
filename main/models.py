@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 class Product(models.Model):
@@ -48,7 +49,7 @@ class Pedido(models.Model):
     cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE, related_name='pedidos')
     productos = models.CharField(max_length=255)
     estatus = models.BooleanField(default=False, help_text="True = Enviado, False = No enviado")
-    fecha = models.CharField(max_length=10)
+    fecha = models.CharField(max_length=10, default=False)
 
     def __str__(self):
         return f"Pedido {self.folio} - {self.cliente.descripcion}"
