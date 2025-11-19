@@ -27,3 +27,8 @@ class UnidadMedidaSerializer(serializers.ModelSerializer):
     class Meta:
         model = UnidadMedida
         fields = '__all__'
+
+class PedidoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pedido
+        fields = '__all__'

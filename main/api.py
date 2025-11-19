@@ -43,3 +43,11 @@ class UnidadMedidaViewSet(viewsets.ModelViewSet):
     queryset = UnidadMedida.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = UnidadMedidaSerializer
+
+class PedidoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows pedidos to be viewed or edited.
+    """
+    queryset = Pedido.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = PedidoSerializer
