@@ -51,3 +51,11 @@ class PedidoViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = PedidoSerializer
+
+class CategoriaViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows categorias to be viewed or edited.
+    """
+    queryset = Categoria.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = CategoriaSerializer

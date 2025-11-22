@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Cliente, UnidadMedida, Pedido
+from .models import Cliente, UnidadMedida, Pedido, Categoria
 
 
 @admin.register(Cliente)
@@ -18,3 +18,7 @@ class PedidoAdmin(admin.ModelAdmin):
 	list_display = ('id_pedido', 'folio', 'cliente', 'productos', 'estatus','created_at')
 	list_filter = ('estatus', 'cliente')
 	search_fields = ('folio', 'productos')
+
+@admin.register(Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+	list_display = ('id', 'description')
