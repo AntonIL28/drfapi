@@ -52,11 +52,11 @@ class Cliente(models.Model):
 
 class Pedido(models.Model):
     id_pedido = models.AutoField(primary_key=True)
-    folio = models.CharField(max_length=8, help_text="Formato: xx-xxxxx")
     cliente = models.ForeignKey('Cliente', on_delete=models.CASCADE, related_name='pedidos')
     productos = models.CharField(max_length=255)
     estatus = models.BooleanField(default=False, help_text="True = Enviado, False = No enviado")
     created_at = models.DateTimeField(auto_now_add=True)
+    total = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
 
     def __str__(self):
-        return f"Pedido {self.folio} - {self.cliente.descripcion}"
+        return self.id_pedido
