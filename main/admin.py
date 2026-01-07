@@ -16,7 +16,8 @@ class UnidadMedidaAdmin(admin.ModelAdmin):
 
 @admin.register(Pedido)
 class PedidoAdmin(admin.ModelAdmin):
-	list_display = ('id_pedido', 'cliente', 'productos', 'estatus','created_at', 'total', 'usuario')
+	#list_display = ('id_pedido', 'cliente', 'productos', 'estatus','created_at', 'total', 'usuario')
+	list_display = ('id_pedido', 'cliente', 'productos', 'estatus','created_at', 'total')
 	list_filter = ('estatus', 'cliente')
 	search_fields = ('folio', 'productos')
 
