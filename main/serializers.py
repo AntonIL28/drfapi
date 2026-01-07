@@ -34,7 +34,6 @@ class CategoriaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PedidoSerializer(serializers.ModelSerializer):
-    usuario = serializers.CharField(required=False, allow_blank=True, allow_null=True)
     class Meta:
         model = Pedido
         fields = '__all__'
