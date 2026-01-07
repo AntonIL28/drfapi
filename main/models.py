@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from datetime import datetime
 
 # Create your models here.
@@ -57,6 +58,7 @@ class Pedido(models.Model):
     estatus = models.BooleanField(default=False, help_text="True = Enviado, False = No enviado")
     created_at = models.DateTimeField(auto_now_add=True)
     total = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='pedidos_realizados')
 
     def __str__(self):
         return self.id_pedido
