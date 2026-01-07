@@ -47,10 +47,11 @@ class UnidadMedidaViewSet(viewsets.ModelViewSet):
 class PedidoViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows pedidos to be viewed or edited.
+    """
     
     def perform_create(self, serializer):
     # Esto asigna el usuario autenticado al campo 'usuario' del modelo
-        serializer.save(usuario=self.request.user) """
+        serializer.save(usuario=self.request.user)
 
     queryset = Pedido.objects.all()
     permission_classes = [permissions.AllowAny]

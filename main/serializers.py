@@ -34,7 +34,7 @@ class CategoriaSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PedidoSerializer(serializers.ModelSerializer):
-    #usuario = serializers.ReadOnlyField(source='usuario.username')
+    usuario = serializers.ReadOnlyField(source='usuario.username')
 
     class Meta:
         model = Pedido
