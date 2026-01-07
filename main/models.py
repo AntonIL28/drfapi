@@ -58,7 +58,7 @@ class Pedido(models.Model):
     estatus = models.BooleanField(default=False, help_text="True = Enviado, False = No enviado")
     created_at = models.DateTimeField(auto_now_add=True)
     total = models.DecimalField(max_digits=12, decimal_places=4, null=True, blank=True)
-    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='pedidos_realizados', null=True, blank=True)
+    usuario = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.id_pedido
