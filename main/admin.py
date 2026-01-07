@@ -2,7 +2,7 @@ from django.contrib import admin
 #from import_export.admin import ImportExportModelAdmin
 
 # Register your models here.
-from .models import Cliente, UnidadMedida, Pedido, Categoria
+from .models import Cliente, Proveedor, UnidadMedida, Pedido, Categoria, Product, Marca
 
 
 @admin.register(Cliente)
@@ -23,3 +23,19 @@ class PedidoAdmin(admin.ModelAdmin):
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
 	list_display = ('id', 'description')
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+	list_display = ('codigoprov', 'descripcion', 'upc1', 'upc2', 'mult1', 'mult2', 'unidad_medida1', 'unidad_medida2', 'categoria', 'precio', 'created_at')
+	list_filter = ('categoria', 'codigoprov')
+	search_fields = ('descripcion', 'upc1', 'upc2')
+
+@admin.register(Proveedor)
+class ProveedorAdmin(admin.ModelAdmin):
+	list_display = ('id', 'description')
+	search_fields = ('description',)
+
+@admin.register(Marca)
+class MarcaAdmin(admin.ModelAdmin):
+	list_display = ('id', 'description')
+	search_fields = ('description',)
